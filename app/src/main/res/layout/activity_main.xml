@@ -1,50 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/TextViewResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="62dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="246dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    tools:context=".MainActivity"
+    android:background="@color/Azul"
+    >
 
     <EditText
         android:id="@+id/editTextinicial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="158dp"
+        android:minWidth="100dp"
+        android:minHeight="50dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:hint="Valor inicial"
+        android:foregroundTint="@color/Branco"
+        android:backgroundTint="@color/Branco"
+        android:textColor="@color/Branco"
+        android:textColorHint="@color/Branco"
+        />
 
     <EditText
         android:id="@+id/editTextfinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="203dp"
+        android:minWidth="100dp"
+        android:minHeight="50dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextinicial"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_toRightOf="@id/editTextinicial"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:hint="Valor final"
+        android:foregroundTint="@color/Branco"
+        android:backgroundTint="@color/Branco"
+        android:textColor="@color/Branco"
+        android:textColorHint="@color/Branco"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextinicial"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#00FFFFFF"
+        android:cropToPadding="false"
+        android:onClick="Sortear"
+        android:scaleType="centerInside"
+        android:src="@drawable/doende" />
+
+    <TextView
+        android:id="@+id/TextViewResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Resultado:"
+        android:layout_below="@id/button"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/Branco"
+        />
+
+</android.widget.RelativeLayout>
